@@ -1,9 +1,9 @@
 ﻿using RimWorld;
 using UnityEngine;
 using Verse;
-using WallStuff;
+using WallHeater;
 
-namespace WallStuff
+namespace WallHeater
 {
     public class Building_MediumHeater : Building_TempControl, IWallAttachable
     {
@@ -45,7 +45,7 @@ namespace WallStuff
             base.SpawnSetup(map, respawningAfterLoad);
             vecNorth = Position + IntVec3.North.RotatedBy( Rotation );
 
-            glower = GenSpawn.Spawn( ThingDef.Named( "WallStuff_HeaterGlower" ), vecNorth, map);
+            glower = GenSpawn.Spawn( ThingDef.Named( "WallHeater_HeaterGlower" ), vecNorth, map);
             ((Building_HeaterGlower) glower).Reinit( this );
             compGlower = glower.TryGetComp< CompMyGlower >();
             //compGlower.Lit = false;
@@ -114,7 +114,7 @@ namespace WallStuff
                     ? 0f
                     : Mathf.InverseLerp( 120f, 20f, temperature );
             }
-            var energyLimit = WallStuffSettings.heaterPower*energyMod*4.16666651f;
+            var energyLimit = WallHeaterSettings.heaterPower*energyMod*4.16666651f;
             var hotAir = GenTemperature.ControlTemperatureTempChange( vecNorth, this.Map, energyLimit,
                                                                       compTempControl.targetTemperature );
 

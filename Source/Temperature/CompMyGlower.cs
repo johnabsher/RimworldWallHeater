@@ -1,6 +1,6 @@
 ﻿using Verse;
 
-namespace WallStuff
+namespace WallHeater
 {
     class CompMyGlower : CompGlower
     {

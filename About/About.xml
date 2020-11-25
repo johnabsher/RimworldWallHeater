@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-	<name>WallStuff</name>
+	<name>WallHeater</name>
 	<author>Arcjc007</author>
-	<packageId>Arcjc007.WallStuff</packageId>
+	<packageId>Arcjc007.WallHeater</packageId>
 	<supportedVersions>
 		<li>1.0</li>
 		<li>1.1</li>

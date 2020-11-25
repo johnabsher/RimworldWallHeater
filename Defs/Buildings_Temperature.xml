@@ -3,7 +3,7 @@
 
     <ThingDef ParentName="BuildingBase">
         <defName>WallHeater</defName>
-        <thingClass>WallStuff.Building_MediumHeater</thingClass>
+        <thingClass>WallHeater.Building_MediumHeater</thingClass>
         <label>wall heater</label>
         <description>A wall mounted heater, which is more efficient at heating large rooms and bases. It can automatically turn itself on or off to reach a specific target temperature.</description>
         <graphicData>
@@ -37,9 +37,9 @@
 			<li Class="CompProperties_Breakdownable"/>
         </comps>
         <placeWorkers>
-            <li>WallStuff.PlaceWorker_MediumHeater</li>
-            <li>WallStuff.PlaceWorker_WallObject</li>
-            <li>WallStuff.PlaceWorker_WallChecker</li>
+            <li>WallHeater.PlaceWorker_MediumHeater</li>
+            <li>WallHeater.PlaceWorker_WallObject</li>
+            <li>WallHeater.PlaceWorker_WallChecker</li>
         </placeWorkers>
         <altitudeLayer>PawnUnused</altitudeLayer>
         <castEdgeShadows>false</castEdgeShadows>
@@ -54,8 +54,8 @@
     </ThingDef>
 
     <ThingDef ParentName="BuildingBase">
-        <defName>WallStuff_HeaterGlower</defName>
-        <thingClass>WallStuff.Building_HeaterGlower</thingClass>
+        <defName>WallHeater_HeaterGlower</defName>
+        <thingClass>WallHeater.Building_HeaterGlower</thingClass>
         <label>wall heater</label>
         <graphicData>
             <texPath>Things/Transparent</texPath>
@@ -71,7 +71,7 @@
         </statBases>
         <comps>
             <li Class="CompProperties_Glower">
-                <compClass>WallStuff.CompMyGlower</compClass>
+                <compClass>WallHeater.CompMyGlower</compClass>
                 <glowRadius>16</glowRadius>
                 <glowColor>(255,150,100,0)</glowColor>
             </li>

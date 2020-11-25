@@ -1,7 +1,7 @@
 ﻿using RimWorld;
 using Verse;
 
-namespace WallStuff
+namespace WallHeater
 {
     public sealed class ThingCountExposable : IExposable
     {

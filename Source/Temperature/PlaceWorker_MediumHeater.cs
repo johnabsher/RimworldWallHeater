@@ -4,7 +4,7 @@ using System.Linq;
 using UnityEngine;
 using Verse;
 
-namespace WallStuff
+namespace WallHeater
 {
     public class PlaceWorker_MediumHeater : PlaceWorker
     {
