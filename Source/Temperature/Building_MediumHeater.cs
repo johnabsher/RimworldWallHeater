@@ -5,7 +5,7 @@ using WallHeater;
 
 namespace WallHeater
 {
-    public class Building_MediumHeater : Building_TempControl, IWallAttachable
+    public class Building_MediumHeater : Building_TempControl
     {
         public Thing glower;
 
@@ -114,7 +114,7 @@ namespace WallHeater
                     ? 0f
                     : Mathf.InverseLerp( 120f, 20f, temperature );
             }
-            var energyLimit = WallHeaterSettings.heaterPower*energyMod*4.16666651f;
+            var energyLimit = WallHeaterSettings.heaterPower * energyMod;
             var hotAir = GenTemperature.ControlTemperatureTempChange( vecNorth, this.Map, energyLimit,
                                                                       compTempControl.targetTemperature );
 

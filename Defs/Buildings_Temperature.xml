@@ -50,7 +50,7 @@
         <researchPrerequisites>
             <li>Electricity</li>
         </researchPrerequisites>
-        <constructionSkillPrerequisite>10</constructionSkillPrerequisite>
+        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
     </ThingDef>
 
     <ThingDef ParentName="BuildingBase">
