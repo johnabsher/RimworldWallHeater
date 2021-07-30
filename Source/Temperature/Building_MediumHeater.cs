@@ -121,7 +121,7 @@ namespace WallHeater
             var hotIsHot = !Mathf.Approximately( hotAir, 0f );
             if (hotIsHot)
             {
-                roomNorth.Group.Temperature += hotAir;
+                roomNorth.Temperature += hotAir;
                 WorkingState = true;
             }
             else
