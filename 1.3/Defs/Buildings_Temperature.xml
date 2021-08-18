@@ -3,7 +3,7 @@
 
     <ThingDef ParentName="BuildingBase">
         <defName>WallHeater</defName>
-        <thingClass>WallHeater.Building_MediumHeater</thingClass>
+        <thingClass>WallHeater.Building_WallHeater</thingClass>
         <label>wall heater</label>
         <description>A wall mounted heater, which is more efficient at heating large rooms and bases. It can automatically turn itself on or off to reach a specific target temperature.</description>
         <graphicData>
@@ -46,7 +46,7 @@
         <designationCategory>Temperature</designationCategory>
         <clearBuildingArea>false</clearBuildingArea>
         <drawPlaceWorkersWhileSelected>true</drawPlaceWorkersWhileSelected>
-        <tickerType>Normal</tickerType>
+        <tickerType>Rare</tickerType>
         <researchPrerequisites>
             <li>Electricity</li>
         </researchPrerequisites>
@@ -72,14 +72,15 @@
         <comps>
             <li Class="CompProperties_Glower">
                 <compClass>WallHeater.CompMyGlower</compClass>
-                <glowRadius>16</glowRadius>
+                <glowRadius>50</glowRadius>
                 <glowColor>(255,150,100,0)</glowColor>
             </li>
         </comps>
         <altitudeLayer>Building</altitudeLayer>
         <castEdgeShadows>false</castEdgeShadows>
-        <selectable>true</selectable>
+        <selectable>false</selectable>
         <tickerType>Normal</tickerType>
+        <useHitPoints>false</useHitPoints>
     </ThingDef>
 
 </Defs>
