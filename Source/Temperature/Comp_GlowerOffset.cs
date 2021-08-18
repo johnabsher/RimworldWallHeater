@@ -2,7 +2,7 @@
 
 namespace WallHeater
 {
-    class CompMyGlower : CompGlower
+    class CompGlowerOffset : CompGlower
     {
         private bool glowOnInt;
         
