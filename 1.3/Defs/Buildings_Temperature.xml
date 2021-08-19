@@ -44,6 +44,9 @@
             <li>WallHeater.PlaceWorker_WallChecker</li>
         </placeWorkers>
 	<minifiedDef>MinifiedThing</minifiedDef>
+	<thingCategories>
+	      <li>BuildingsTemperature</li>
+	    </thingCategories>
         <altitudeLayer>PawnUnused</altitudeLayer>
         <castEdgeShadows>false</castEdgeShadows>
         <designationCategory>Temperature</designationCategory>
