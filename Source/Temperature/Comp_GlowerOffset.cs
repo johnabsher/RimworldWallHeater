@@ -1,41 +1,138 @@
-﻿using Verse;
+﻿using System;
+using RimWorld;
+using Verse;
 
 namespace WallHeater
 {
-    class CompGlowerOffset : CompGlower
-    {
-        private bool glowOnInt;
-        
-        public void UpdateLit(bool lit)
-        {
-            bool shouldBeLitNow = lit;
-            if (this.glowOnInt == shouldBeLitNow)
-            {
-                return;
-            }
-            this.glowOnInt = shouldBeLitNow;
-            if (!this.glowOnInt)
-            {               
-            }
-            else
-            {
-            }
-        }
+	public class CompGlowerOffset : ThingComp
+	{
 
-        public override void PostSpawnSetup(bool respawningAfterLoad)
-        {
-            this.UpdateLit(false);
-        }
+		// Token: 0x04000038 RID: 56
+		private Building building;
+		public Thing glower;
+		public IntVec3 glowPos;
+		private bool glowOnInt;
 
-        public override void PostExposeData()
-        {
-            Scribe_Values.Look<bool>(ref this.glowOnInt, "glowOn", false, false);
-        }
+		public CompProperties_GlowerOffset Props
+		{
+			get
+			{
+				return (CompProperties_GlowerOffset)this.props;
+			}
+		}
 
-        public override void PostDeSpawn(Map map)
-        {
-            base.PostDeSpawn(map);
-            this.UpdateLit(false);
-        }
-    }
-}
+		public IntVec3 dx
+		{
+			get
+			{
+				if (!this.parent.Spawned)
+				{
+					return IntVec3.Zero;
+				}
+				else
+				{
+					return IntVec3.North.RotatedBy(this.parent.Rotation);
+				}
+			}
+		}
+
+			private bool shouldBeLitNow
+			{
+				get
+				{
+					bool flag = !this.parent.Spawned;
+					bool result;
+					if (flag)
+					{
+						result = false;
+					}
+					else
+					{
+						bool flag2 = !FlickUtility.WantsToBeOn(this.parent);
+						if (flag2)
+						{
+							result = false;
+						}
+						else
+						{
+							CompPowerTrader compPowerTrader = this.parent.TryGetComp<CompPowerTrader>();
+							bool flag3 = compPowerTrader != null && !compPowerTrader.PowerOn;
+							if (flag3)
+							{
+								result = false;
+							}
+							else
+							{
+								result = true;
+							}
+						}
+					}
+					return result;
+				}
+			}
+
+			// Token: 0x06000026 RID: 38 RVA: 0x00003CD8 File Offset: 0x00001ED8
+			public override void ReceiveCompSignal(string signal)
+			{
+				bool flag = signal == "PowerTurnedOn" || signal == "PowerTurnedOff" || signal == "FlickedOn" || signal == "FlickedOff";
+				if (flag)
+				{
+					this.UpdateLit();
+				}
+			}
+
+			public void UpdateLit()
+			{
+				bool flag = this.glowOnInt != this.shouldBeLitNow;
+				if (flag)
+				{
+					this.glowOnInt = this.shouldBeLitNow;
+					bool flag2 = !this.glowOnInt;
+					if (flag2)
+					{
+						this.DespawnGlower();
+					}
+					else
+					{
+						this.SpawnGlower();
+					}
+				}
+			}
+
+			public override void PostSpawnSetup(bool respawningAfterLoad)
+			{
+				base.PostSpawnSetup(respawningAfterLoad);
+				this.building = (this.parent as Building);
+				this.UpdateLit();
+			}
+
+			public override void PostDeSpawn(Map map)
+			{
+				base.PostDeSpawn(map);
+				this.UpdateLit();
+			}
+
+			public void SpawnGlower()
+			{
+				this.glowPos = this.parent.Position + dx;
+				this.glower = ThingMaker.MakeThing(ThingDef.Named(this.Props.glowerDefName), null);
+				bool flag = this.building == null;
+				if (flag)
+				{
+					this.building = (this.parent as Building);
+				}
+				GenSpawn.Spawn(this.glower, this.glowPos, this.parent.Map, this.parent.Rotation, WipeMode.Vanish, false);
+			}
+
+			public void DespawnGlower()
+			{
+				bool flag = this.glower != null && this.glower.Spawned;
+				if (flag)
+				{
+					this.glower.DeSpawn(DestroyMode.Vanish);
+					this.glower = null;
+				}
+			}
+
+		}
+	}

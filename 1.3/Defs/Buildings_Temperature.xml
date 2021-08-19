@@ -32,15 +32,18 @@
 			<li Class="CompProperties_Flickable"/>
             <li Class="CompProperties_TempControl">
 				<compClass>CompTempControl</compClass>
-                <energyPerSecond>40</energyPerSecond>
+                <energyPerSecond>21</energyPerSecond>
             </li>
-			<li Class="CompProperties_Breakdownable"/>
+      <li Class="WallHeater.CompProperties_GlowerOffset">
+		<glowerDefName>Lighting_WallHeater_Glower</glowerDefName>
+	  </li>
         </comps>
         <placeWorkers>
             <li>WallHeater.PlaceWorker_MediumHeater</li>
             <li>WallHeater.PlaceWorker_WallObject</li>
             <li>WallHeater.PlaceWorker_WallChecker</li>
         </placeWorkers>
+	<minifiedDef>MinifiedThing</minifiedDef>
         <altitudeLayer>PawnUnused</altitudeLayer>
         <castEdgeShadows>false</castEdgeShadows>
         <designationCategory>Temperature</designationCategory>
@@ -50,38 +53,43 @@
         <researchPrerequisites>
             <li>Electricity</li>
         </researchPrerequisites>
-        <constructionSkillPrerequisite>8</constructionSkillPrerequisite>
+        <constructionSkillPrerequisite>5</constructionSkillPrerequisite>
     </ThingDef>
 
-    <ThingDef ParentName="BuildingBase">
-        <defName>WallHeater_HeaterGlower</defName>
-        <thingClass>WallHeater.Building_HeaterGlower</thingClass>
-        <label>wall heater</label>
-        <graphicData>
-            <texPath>Things/Transparent</texPath>
-            <graphicClass>Graphic_Single</graphicClass>
-            <shaderType>Transparent</shaderType>
-        </graphicData>
-        <building>
-            <isEdifice>false</isEdifice>
-        </building>
-        <statBases>
-            <WorkToBuild>1</WorkToBuild>
-            <Flammability>0</Flammability>
-        </statBases>
-        <comps>
-            <li Class="CompProperties_Glower">
-                <compClass>WallHeater.CompMyGlower</compClass>
-                <glowRadius>50</glowRadius>
-                <glowColor>(255,150,100,0)</glowColor>
-            </li>
-        </comps>
-        <altitudeLayer>Building</altitudeLayer>
-        <castEdgeShadows>false</castEdgeShadows>
-        <selectable>false</selectable>
-        <tickerType>Normal</tickerType>
-        <useHitPoints>false</useHitPoints>
-    </ThingDef>
+  <ThingDef ParentName = "BuildingBase">
+        <defName>Lighting_WallHeater_Glower</defName>
+	<thingClass>Building</thingClass>
+	<label>UNUSED</label>
+	<description>UNUSED</description>
+	<category>Mote</category>
+	<building>
+		<isEdifice>false</isEdifice>
+	</building>
+	<statBases>
+		<Flammability>0</Flammability>
+	</statBases>
+	<tickerType>Never</tickerType>
+	<altitudeLayer>ItemImportant</altitudeLayer>
+	<passability>Standable</passability>
+	<destroyable>false</destroyable>
+	<rotatable>false</rotatable>
+	<clearBuildingArea>false</clearBuildingArea>
+	<selectable>false</selectable>
+	<coversFloor>false</coversFloor>
+	<useHitPoints>false</useHitPoints>
+	<tradeability>None</tradeability>
+	<isAutoAttackableMapObject>false</isAutoAttackableMapObject>
+	<graphicData>
+      <texPath>Things/Transparent</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2.2,2.2</drawSize>
+    </graphicData>
+    <comps>
+      <li Class="CompProperties_Glower">
+        <glowRadius>3</glowRadius>
+        <glowColor>(255,150,100,0)</glowColor>
+      </li>
+    </comps>
+  </ThingDef>
 
 </Defs>
-

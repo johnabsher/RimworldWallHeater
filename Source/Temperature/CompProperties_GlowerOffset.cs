@@ -1,14 +1,16 @@
 ﻿using System;
 using Verse;
+using RimWorld;
 
 namespace WallHeater
 {
-	public class CompProperties_OffsetGlower : CompProperties
+	public class CompProperties_GlowerOffset : CompProperties
 	{
-		public CompProperties_OffsetGlower()
+		public CompProperties_GlowerOffset()
 		{
 			this.compClass = typeof(CompGlowerOffset);
 		}
+
 		public string glowerDefName = "";
 	}
 }
