@@ -7,7 +7,6 @@ namespace WallHeater
 	public class CompGlowerOffset : ThingComp
 	{
 
-		// Token: 0x04000038 RID: 56
 		private Building building;
 		public Thing glower;
 		public IntVec3 glowPos;
@@ -71,7 +70,6 @@ namespace WallHeater
 				}
 			}
 
-			// Token: 0x06000026 RID: 38 RVA: 0x00003CD8 File Offset: 0x00001ED8
 			public override void ReceiveCompSignal(string signal)
 			{
 				bool flag = signal == "PowerTurnedOn" || signal == "PowerTurnedOff" || signal == "FlickedOn" || signal == "FlickedOff";

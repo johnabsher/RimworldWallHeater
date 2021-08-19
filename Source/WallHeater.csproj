@@ -56,7 +56,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ResourceBank.cs" />
     <Compile Include="Temperature\Building_WallHeater.cs" />
-    <Compile Include="Temperature\CompProperties_OffsetGlower.cs" />
+    <Compile Include="Temperature\CompProperties_GlowerOffset.cs" />
     <Compile Include="Temperature\Comp_GlowerOffset.cs" />
     <Compile Include="Temperature\PlaceWorker_WallHeater.cs" />
     <Compile Include="WallUtil\IWallAttachable.cs" />
