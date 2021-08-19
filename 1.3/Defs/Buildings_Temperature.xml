@@ -89,7 +89,7 @@
     </graphicData>
     <comps>
       <li Class="CompProperties_Glower">
-        <glowRadius>3</glowRadius>
+        <glowRadius>2</glowRadius>
         <glowColor>(255,150,100,0)</glowColor>
       </li>
     </comps>
