@@ -9,14 +9,7 @@
 		<li>1.4</li>
 		<li>1.5</li>
 	</supportedVersions>
-	<description><![CDATA[Adds wall mountable heater to the game.  Roughly comparable to the vanilla heater, but wall mountable.  
-
-Power can be customized in Mod settings.
-
-Based of ArcJc's great mod WallStuff (https://steamcommunity.com/sharedfiles/filedetails/?id=1994340640)
-
-PRs accepted!
-	]]>
+	<description><![CDATA[Adds wall mountable heater to the game.  Identical to vanilla heater, but wall mountable.  Power can be customized in Mod settings.]]>
 	</description>
 	<url>https://github.com/johnabsher/RimworldWallHeater</url>
 </ModMetaData>
