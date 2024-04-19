@@ -9,7 +9,7 @@
 		<li>1.4</li>
 		<li>1.5</li>
 	</supportedVersions>
-	<description><![CDATA[Adds wall mountable heater to the game.  Identical to vanilla heater, but wall mountable.  Power can be customized in Mod settings.]]>
+	<description><![CDATA[Adds wall mountable heater to the game.  Identical to vanilla heater, but wall mountable.]]>
 	</description>
 	<url>https://github.com/johnabsher/RimworldWallHeater</url>
 </ModMetaData>
